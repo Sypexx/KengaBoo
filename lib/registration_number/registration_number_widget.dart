@@ -21,7 +21,7 @@ class _RegistrationNumberWidgetState extends State<RegistrationNumberWidget> {
   @override
   void initState() {
     super.initState();
-    textController = TextEditingController();
+    textController = TextEditingController(text: '+7');
   }
 
   @override
@@ -133,6 +133,7 @@ class _RegistrationNumberWidgetState extends State<RegistrationNumberWidget> {
                                     fillColor: Colors.white,
                                   ),
                                   style: FlutterFlowTheme.bodyText1,
+                                  keyboardType: TextInputType.phone,
                                 ),
                               ),
                               Padding(
