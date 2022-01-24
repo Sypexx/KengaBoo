@@ -1,6 +1,6 @@
 {
-    "name": "kenga_boo",
-    "short_name": "kenga_boo",
+    "name": "KengaBoo",
+    "short_name": "KengaBoo",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

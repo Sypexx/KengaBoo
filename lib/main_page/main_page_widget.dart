@@ -21,6 +21,22 @@ class _MainPageWidgetState extends State<MainPageWidget> {
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: Color(0xFFF5F5F5),
+      drawer: Container(
+        width: MediaQuery.of(context).size.width * 0.4,
+        child: Drawer(
+          elevation: 16,
+          child: Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(0, 50, 0, 50),
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height * 1,
+              decoration: BoxDecoration(
+                color: Color(0xFFEEEEEE),
+              ),
+            ),
+          ),
+        ),
+      ),
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height * 1,

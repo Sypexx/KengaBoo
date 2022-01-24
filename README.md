@@ -1,4 +1,4 @@
-# kenga_boo
+# KengaBoo
 
 A new Flutter project.
 
