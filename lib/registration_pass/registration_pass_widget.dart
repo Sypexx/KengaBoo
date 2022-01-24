@@ -210,7 +210,7 @@ class _RegistrationPassWidgetState extends State<RegistrationPassWidget> {
                           child: Stack(
                             children: [
                               Align(
-                                alignment: AlignmentDirectional(-1.05, 0.36),
+                                alignment: AlignmentDirectional(0.52, 0.44),
                                 child: InkWell(
                                   onTap: () async {
                                     await Navigator.push(
