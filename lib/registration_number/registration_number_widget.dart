@@ -43,15 +43,19 @@ class _RegistrationNumberWidgetState extends State<RegistrationNumberWidget> {
         ),
         child: Stack(
           children: [
-            Align(
-              alignment: AlignmentDirectional(0, 1.02),
-              child: Container(
-                width: double.infinity,
-                height: MediaQuery.of(context).size.height * 0.85,
-                decoration: BoxDecoration(
-                  color: Color(0xCB100B02),
+            Stack(
+              children: [
+                Align(
+                  alignment: AlignmentDirectional(0, 1.02),
+                  child: Container(
+                    width: double.infinity,
+                    height: MediaQuery.of(context).size.height * 0.85,
+                    decoration: BoxDecoration(
+                      color: Color(0xCB100B02),
+                    ),
+                  ),
                 ),
-              ),
+              ],
             ),
             Align(
               alignment: AlignmentDirectional(0, -0.2),
@@ -63,39 +67,35 @@ class _RegistrationNumberWidgetState extends State<RegistrationNumberWidget> {
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 30),
                     child: Container(
-                      width: 300,
+                      width: 330,
                       height: 50,
                       child: Stack(
                         children: [
                           Align(
                             alignment: AlignmentDirectional(-0.8, 0),
-                            child: Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(3, 3, 3, 0),
-                              child: TextFormField(
-                                controller: textController,
-                                obscureText: false,
-                                decoration: InputDecoration(
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Color(0xFF8CC8EA),
-                                      width: 4,
-                                    ),
-                                    borderRadius: BorderRadius.circular(40),
+                            child: TextFormField(
+                              controller: textController,
+                              obscureText: false,
+                              decoration: InputDecoration(
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Color(0xFF8CC8EA),
+                                    width: 4,
                                   ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Color(0xFF8CC8EA),
-                                      width: 4,
-                                    ),
-                                    borderRadius: BorderRadius.circular(40),
-                                  ),
-                                  filled: true,
-                                  fillColor: Colors.white,
+                                  borderRadius: BorderRadius.circular(40),
                                 ),
-                                style: FlutterFlowTheme.bodyText1,
-                                keyboardType: TextInputType.phone,
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Color(0xFF8CC8EA),
+                                    width: 4,
+                                  ),
+                                  borderRadius: BorderRadius.circular(40),
+                                ),
+                                filled: true,
+                                fillColor: Colors.white,
                               ),
+                              style: FlutterFlowTheme.bodyText1,
+                              keyboardType: TextInputType.phone,
                             ),
                           ),
                         ],
@@ -161,14 +161,18 @@ class _RegistrationNumberWidgetState extends State<RegistrationNumberWidget> {
                 ],
               ),
             ),
-            Align(
-              alignment: AlignmentDirectional(-1, 1),
-              child: Image.asset(
-                'assets/images/NicePng_teacher-clipart-2.png',
-                width: MediaQuery.of(context).size.width * 0.6,
-                height: MediaQuery.of(context).size.height * 0.2,
-                fit: BoxFit.cover,
-              ),
+            Stack(
+              children: [
+                Align(
+                  alignment: AlignmentDirectional(-1, 1),
+                  child: Image.asset(
+                    'assets/images/NicePng_teacher-clipart-2.png',
+                    width: MediaQuery.of(context).size.width * 0.6,
+                    height: MediaQuery.of(context).size.height * 0.2,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ],
             ),
             Align(
               alignment: AlignmentDirectional(-0.05, -0.83),
