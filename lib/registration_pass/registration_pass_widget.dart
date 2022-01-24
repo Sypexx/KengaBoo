@@ -1,8 +1,10 @@
+import '../flutter_flow/flutter_flow_expanded_image_view.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 
 class RegistrationPassWidget extends StatefulWidget {
   const RegistrationPassWidget({Key key}) : super(key: key);
@@ -28,20 +30,21 @@ class _RegistrationPassWidgetState extends State<RegistrationPassWidget> {
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: Color(0xFFF5F5F5),
-      body: Column(
-        mainAxisSize: MainAxisSize.max,
-        children: [
-          Stack(
+      body: SafeArea(
+        child: Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height * 1,
+          decoration: BoxDecoration(
+            color: Color(0x00EEEEEE),
+            image: DecorationImage(
+              fit: BoxFit.cover,
+              image: Image.asset(
+                'assets/images/Rectangle_64.png',
+              ).image,
+            ),
+          ),
+          child: Stack(
             children: [
-              Align(
-                alignment: AlignmentDirectional(0, 0),
-                child: Image.asset(
-                  'assets/images/Rectangle_64.png',
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height * 1,
-                  fit: BoxFit.cover,
-                ),
-              ),
               Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -204,17 +207,42 @@ class _RegistrationPassWidgetState extends State<RegistrationPassWidget> {
                           width: MediaQuery.of(context).size.width,
                           height: MediaQuery.of(context).size.height * 0.37,
                           decoration: BoxDecoration(),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                          child: Stack(
                             children: [
-                              Image.asset(
-                                'assets/images/NicePng_teacher-clipart-2.png',
-                                width: MediaQuery.of(context).size.width * 0.6,
-                                height:
-                                    MediaQuery.of(context).size.height * 0.2,
-                                fit: BoxFit.contain,
+                              Align(
+                                alignment: AlignmentDirectional(-1.05, 0.36),
+                                child: InkWell(
+                                  onTap: () async {
+                                    await Navigator.push(
+                                      context,
+                                      PageTransition(
+                                        type: PageTransitionType.fade,
+                                        child: FlutterFlowExpandedImageView(
+                                          image: Image.asset(
+                                            'assets/images/NicePng_teacher-clipart-2.png',
+                                            fit: BoxFit.contain,
+                                          ),
+                                          allowRotation: false,
+                                          tag: 'imageTag',
+                                          useHeroAnimation: true,
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                  child: Hero(
+                                    tag: 'imageTag',
+                                    transitionOnUserGestures: true,
+                                    child: Image.asset(
+                                      'assets/images/NicePng_teacher-clipart-2.png',
+                                      width: MediaQuery.of(context).size.width *
+                                          0.6,
+                                      height:
+                                          MediaQuery.of(context).size.height *
+                                              0.2,
+                                      fit: BoxFit.contain,
+                                    ),
+                                  ),
+                                ),
                               ),
                             ],
                           ),
@@ -226,7 +254,7 @@ class _RegistrationPassWidgetState extends State<RegistrationPassWidget> {
               ),
             ],
           ),
-        ],
+        ),
       ),
     );
   }
