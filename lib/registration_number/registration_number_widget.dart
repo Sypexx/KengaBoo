@@ -43,19 +43,15 @@ class _RegistrationNumberWidgetState extends State<RegistrationNumberWidget> {
         ),
         child: Stack(
           children: [
-            Stack(
-              children: [
-                Align(
-                  alignment: AlignmentDirectional(0, 1.02),
-                  child: Container(
-                    width: double.infinity,
-                    height: MediaQuery.of(context).size.height * 0.85,
-                    decoration: BoxDecoration(
-                      color: Color(0xCB100B02),
-                    ),
-                  ),
+            Align(
+              alignment: AlignmentDirectional(0, 1.02),
+              child: Container(
+                width: double.infinity,
+                height: MediaQuery.of(context).size.height * 0.85,
+                decoration: BoxDecoration(
+                  color: Color(0xCB100B02),
                 ),
-              ],
+              ),
             ),
             Align(
               alignment: AlignmentDirectional(0, -0.2),
@@ -161,18 +157,14 @@ class _RegistrationNumberWidgetState extends State<RegistrationNumberWidget> {
                 ],
               ),
             ),
-            Stack(
-              children: [
-                Align(
-                  alignment: AlignmentDirectional(-1, 1),
-                  child: Image.asset(
-                    'assets/images/NicePng_teacher-clipart-2.png',
-                    width: MediaQuery.of(context).size.width * 0.6,
-                    height: MediaQuery.of(context).size.height * 0.2,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ],
+            Align(
+              alignment: AlignmentDirectional(-1, 1),
+              child: Image.asset(
+                'assets/images/NicePng_teacher-clipart-2.png',
+                width: MediaQuery.of(context).size.width * 0.6,
+                height: MediaQuery.of(context).size.height * 0.2,
+                fit: BoxFit.cover,
+              ),
             ),
             Align(
               alignment: AlignmentDirectional(-0.05, -0.83),
