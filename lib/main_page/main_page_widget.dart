@@ -26,12 +26,12 @@ class _MainPageWidgetState extends State<MainPageWidget> {
         child: Drawer(
           elevation: 16,
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0, 50, 0, 50),
+            padding: EdgeInsetsDirectional.fromSTEB(0, 50, 0, 0),
             child: Container(
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height * 1,
               decoration: BoxDecoration(
-                color: Color(0xFFEEEEEE),
+                color: Color(0xFFFF0000),
               ),
             ),
           ),
