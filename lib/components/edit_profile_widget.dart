@@ -1,6 +1,7 @@
 import '../auth/auth_util.dart';
 import '../backend/backend.dart';
 import '../components/edit_name_widget.dart';
+import '../components/edit_photo_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
@@ -48,8 +49,17 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
           mainAxisSize: MainAxisSize.max,
           children: [
             FFButtonWidget(
-              onPressed: () {
-                print('Button pressed ...');
+              onPressed: () async {
+                await showModalBottomSheet(
+                  isScrollControlled: true,
+                  context: context,
+                  builder: (context) {
+                    return Padding(
+                      padding: MediaQuery.of(context).viewInsets,
+                      child: EditPhotoWidget(),
+                    );
+                  },
+                );
               },
               text: 'Изменить фото',
               options: FFButtonOptions(
