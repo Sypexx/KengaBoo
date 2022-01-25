@@ -162,8 +162,7 @@ class _RegistrationNumberWidgetState extends State<RegistrationNumberWidget> {
               alignment: AlignmentDirectional(-1, 1),
               child: Image.asset(
                 'assets/images/NicePng_teacher-clipart-2.png',
-                width: MediaQuery.of(context).size.width * 0.6,
-                height: MediaQuery.of(context).size.height * 0.2,
+                width: MediaQuery.of(context).size.width * 0.5,
                 fit: BoxFit.cover,
               ),
             ),
