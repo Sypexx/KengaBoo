@@ -1,14 +1,16 @@
 import '../auth/auth_util.dart';
 import '../backend/backend.dart';
+import '../backend/firebase_storage/storage.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../flutter_flow/upload_media.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class EditNameWidget extends StatefulWidget {
-  const EditNameWidget({
+class EditPhotoWidget extends StatefulWidget {
+  const EditPhotoWidget({
     Key key,
     this.profileparameters,
   }) : super(key: key);
@@ -16,17 +18,11 @@ class EditNameWidget extends StatefulWidget {
   final UsersRecord profileparameters;
 
   @override
-  _EditNameWidgetState createState() => _EditNameWidgetState();
+  _EditPhotoWidgetState createState() => _EditPhotoWidgetState();
 }
 
-class _EditNameWidgetState extends State<EditNameWidget> {
-  TextEditingController textController;
-
-  @override
-  void initState() {
-    super.initState();
-    textController = TextEditingController();
-  }
+class _EditPhotoWidgetState extends State<EditPhotoWidget> {
+  String uploadedFileUrl = '';
 
   @override
   Widget build(BuildContext context) {
@@ -56,37 +52,45 @@ class _EditNameWidgetState extends State<EditNameWidget> {
           children: [
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
-              child: TextFormField(
-                controller: textController,
-                obscureText: false,
-                decoration: InputDecoration(
-                  labelText: 'Введите имя',
-                  labelStyle: FlutterFlowTheme.bodyText1,
-                  hintText: '[Some hint text...]',
-                  hintStyle: FlutterFlowTheme.bodyText1,
-                  enabledBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Color(0x00000000),
-                      width: 1,
-                    ),
-                    borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(4.0),
-                      topRight: Radius.circular(4.0),
-                    ),
+              child: FFButtonWidget(
+                onPressed: () async {
+                  final selectedMedia = await selectMediaWithSourceBottomSheet(
+                    context: context,
+                    allowPhoto: true,
+                  );
+                  if (selectedMedia != null &&
+                      validateFileFormat(selectedMedia.storagePath, context)) {
+                    showUploadMessage(context, 'Uploading file...',
+                        showLoading: true);
+                    final downloadUrl = await uploadData(
+                        selectedMedia.storagePath, selectedMedia.bytes);
+                    ScaffoldMessenger.of(context).hideCurrentSnackBar();
+                    if (downloadUrl != null) {
+                      setState(() => uploadedFileUrl = downloadUrl);
+                      showUploadMessage(context, 'Success!');
+                    } else {
+                      showUploadMessage(context, 'Failed to upload media');
+                      return;
+                    }
+                  }
+                },
+                text: 'Изменить фото',
+                options: FFButtonOptions(
+                  width: double.infinity,
+                  height: 60,
+                  color: Color(0xFFDBE2E7),
+                  textStyle: FlutterFlowTheme.subtitle2.override(
+                    fontFamily: 'Lexend Deca',
+                    color: Color(0xFF262D34),
+                    fontSize: 16,
+                    fontWeight: FontWeight.normal,
                   ),
-                  focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Color(0x00000000),
-                      width: 1,
-                    ),
-                    borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(4.0),
-                      topRight: Radius.circular(4.0),
-                    ),
+                  borderSide: BorderSide(
+                    color: Colors.transparent,
+                    width: 1,
                   ),
+                  borderRadius: 40,
                 ),
-                style: FlutterFlowTheme.bodyText1,
-                textAlign: TextAlign.start,
               ),
             ),
             Padding(
@@ -94,7 +98,7 @@ class _EditNameWidgetState extends State<EditNameWidget> {
               child: FFButtonWidget(
                 onPressed: () async {
                   final usersUpdateData = createUsersRecordData(
-                    displayName: textController.text,
+                    photoUrl: uploadedFileUrl,
                   );
                   await currentUserReference.update(usersUpdateData);
                   await Duration(milliseconds: 1000);

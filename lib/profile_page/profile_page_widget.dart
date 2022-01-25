@@ -127,40 +127,41 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                     ),
                   ),
                 ),
-                Align(
-                  alignment: AlignmentDirectional(0, -0.75),
-                  child: AuthUserStreamWidget(
-                    child: InkWell(
-                      onTap: () async {
-                        await showModalBottomSheet(
-                          isScrollControlled: true,
-                          context: context,
-                          builder: (context) {
-                            return Padding(
-                              padding: MediaQuery.of(context).viewInsets,
-                              child: Container(
-                                height:
-                                    MediaQuery.of(context).size.height * 0.3,
-                                child: EditProfileWidget(),
-                              ),
-                            );
-                          },
-                        );
-                      },
-                      child: Container(
-                        width: 160,
-                        height: 160,
-                        clipBehavior: Clip.antiAlias,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                        ),
-                        child: Image.network(
-                          currentUserPhoto,
+                if ((currentUserPhoto) != 'null')
+                  Align(
+                    alignment: AlignmentDirectional(0, -0.75),
+                    child: AuthUserStreamWidget(
+                      child: InkWell(
+                        onTap: () async {
+                          await showModalBottomSheet(
+                            isScrollControlled: true,
+                            context: context,
+                            builder: (context) {
+                              return Padding(
+                                padding: MediaQuery.of(context).viewInsets,
+                                child: Container(
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.3,
+                                  child: EditProfileWidget(),
+                                ),
+                              );
+                            },
+                          );
+                        },
+                        child: Container(
+                          width: 160,
+                          height: 160,
+                          clipBehavior: Clip.antiAlias,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                          ),
+                          child: Image.network(
+                            currentUserPhoto,
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
                 Align(
                   alignment: AlignmentDirectional(0, 0.05),
                   child: Container(
