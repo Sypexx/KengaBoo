@@ -81,16 +81,6 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
                           child: Text(
-                            'Профиль',
-                            style: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Poppins',
-                              fontSize: 14,
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
-                          child: Text(
                             'Настройки',
                             style: FlutterFlowTheme.bodyText1,
                           ),
