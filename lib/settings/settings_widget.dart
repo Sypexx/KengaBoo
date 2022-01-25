@@ -83,8 +83,8 @@ class _SettingsWidgetState extends State<SettingsWidget> {
             Align(
               alignment: AlignmentDirectional(0, -0.1),
               child: Container(
-                width: 115,
-                height: 40,
+                width: MediaQuery.of(context).size.width * 0.32,
+                height: MediaQuery.of(context).size.height * 0.05,
                 decoration: BoxDecoration(
                   color: Color(0x00EEEEEE),
                 ),
