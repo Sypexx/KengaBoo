@@ -2,26 +2,27 @@ import '../auth/auth_util.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../registration_code_confirm/registration_code_confirm_widget.dart';
+import '../main_page/main_page_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class RegistrationNumberWidget extends StatefulWidget {
-  const RegistrationNumberWidget({Key key}) : super(key: key);
+class RegistrationCodeConfirmWidget extends StatefulWidget {
+  const RegistrationCodeConfirmWidget({Key key}) : super(key: key);
 
   @override
-  _RegistrationNumberWidgetState createState() =>
-      _RegistrationNumberWidgetState();
+  _RegistrationCodeConfirmWidgetState createState() =>
+      _RegistrationCodeConfirmWidgetState();
 }
 
-class _RegistrationNumberWidgetState extends State<RegistrationNumberWidget> {
+class _RegistrationCodeConfirmWidgetState
+    extends State<RegistrationCodeConfirmWidget> {
   TextEditingController textController;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    textController = TextEditingController(text: '+7');
+    textController = TextEditingController();
   }
 
   @override
@@ -62,6 +63,18 @@ class _RegistrationNumberWidgetState extends State<RegistrationNumberWidget> {
                 children: [
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 30),
+                    child: Text(
+                      'Код из СМС',
+                      style: FlutterFlowTheme.bodyText1.override(
+                        fontFamily: 'Poppins',
+                        color: Colors.white,
+                        fontSize: 24,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 30),
                     child: Container(
                       width: 300,
                       height: 50,
@@ -91,50 +104,36 @@ class _RegistrationNumberWidgetState extends State<RegistrationNumberWidget> {
                                 fillColor: Colors.white,
                               ),
                               style: FlutterFlowTheme.bodyText1,
-                              keyboardType: TextInputType.phone,
+                              keyboardType: TextInputType.number,
                             ),
                           ),
                         ],
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 30),
-                    child: Text(
-                      'Введите номер телефона',
-                      style: FlutterFlowTheme.bodyText1.override(
-                        fontFamily: 'Poppins',
-                        color: Colors.white,
-                        fontSize: 24,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ),
                   FFButtonWidget(
                     onPressed: () async {
-                      if (textController.text.isEmpty ||
-                          !textController.text.startsWith('+')) {
+                      if (textController.text.isEmpty) {
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
-                            content: Text(
-                                'Phone Number is required and has to start with +.'),
+                            content: Text('Enter SMS verification code.'),
                           ),
                         );
                         return;
                       }
-                      await beginPhoneAuth(
+                      final phoneVerifiedUser = await verifySmsCode(
                         context: context,
-                        phoneNumber: textController.text,
-                        onCodeSent: () async {
-                          await Navigator.pushAndRemoveUntil(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) =>
-                                  RegistrationCodeConfirmWidget(),
-                            ),
-                            (r) => false,
-                          );
-                        },
+                        smsCode: textController.text,
+                      );
+                      if (phoneVerifiedUser == null) {
+                        return;
+                      }
+                      await Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => MainPageWidget(),
+                        ),
+                        (r) => false,
                       );
                     },
                     text: 'Далее',
