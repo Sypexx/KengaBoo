@@ -1,3 +1,4 @@
+import '../auth/auth_util.dart';
 import '../backend/backend.dart';
 import '../components/edit_profile_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -81,42 +82,81 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                 ),
                 Align(
                   alignment: AlignmentDirectional(0, -0.3),
-                  child: Text(
-                    'Пользователь',
-                    style: FlutterFlowTheme.bodyText1.override(
-                      fontFamily: 'Poppins',
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
+                  child: AuthUserStreamWidget(
+                    child: Text(
+                      currentUserDisplayName,
+                      style: FlutterFlowTheme.bodyText1.override(
+                        fontFamily: 'Poppins',
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                   ),
                 ),
                 Align(
                   alignment: AlignmentDirectional(0, -0.75),
-                  child: InkWell(
-                    onTap: () async {
-                      await showModalBottomSheet(
-                        isScrollControlled: true,
-                        context: context,
-                        builder: (context) {
-                          return Padding(
-                            padding: MediaQuery.of(context).viewInsets,
-                            child: Container(
-                              height: MediaQuery.of(context).size.height * 0.3,
-                              child: EditProfileWidget(),
-                            ),
-                          );
-                        },
-                      );
-                    },
-                    child: Container(
-                      width: 160,
-                      height: 160,
-                      clipBehavior: Clip.antiAlias,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
+                  child: AuthUserStreamWidget(
+                    child: InkWell(
+                      onTap: () async {
+                        await showModalBottomSheet(
+                          isScrollControlled: true,
+                          context: context,
+                          builder: (context) {
+                            return Padding(
+                              padding: MediaQuery.of(context).viewInsets,
+                              child: Container(
+                                height:
+                                    MediaQuery.of(context).size.height * 0.3,
+                                child: EditProfileWidget(),
+                              ),
+                            );
+                          },
+                        );
+                      },
+                      child: Container(
+                        width: 160,
+                        height: 160,
+                        clipBehavior: Clip.antiAlias,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                        ),
+                        child: Image.asset(
+                          'assets/images/Component_2.png',
+                        ),
                       ),
-                      child: Image.network(
-                        'https://picsum.photos/seed/484/600',
+                    ),
+                  ),
+                ),
+                Align(
+                  alignment: AlignmentDirectional(0, -0.75),
+                  child: AuthUserStreamWidget(
+                    child: InkWell(
+                      onTap: () async {
+                        await showModalBottomSheet(
+                          isScrollControlled: true,
+                          context: context,
+                          builder: (context) {
+                            return Padding(
+                              padding: MediaQuery.of(context).viewInsets,
+                              child: Container(
+                                height:
+                                    MediaQuery.of(context).size.height * 0.3,
+                                child: EditProfileWidget(),
+                              ),
+                            );
+                          },
+                        );
+                      },
+                      child: Container(
+                        width: 160,
+                        height: 160,
+                        clipBehavior: Clip.antiAlias,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                        ),
+                        child: Image.network(
+                          currentUserPhoto,
+                        ),
                       ),
                     ),
                   ),
@@ -134,9 +174,11 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
-                          '@телефон',
-                          style: FlutterFlowTheme.bodyText1,
+                        AuthUserStreamWidget(
+                          child: Text(
+                            currentPhoneNumber,
+                            style: FlutterFlowTheme.bodyText1,
+                          ),
                         ),
                       ],
                     ),
