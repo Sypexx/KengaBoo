@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "576599511074",
+    "project_id": "kengaboo-468f8",
+    "storage_bucket": "kengaboo-468f8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:576599511074:android:beeb952e3c5db9875ffa7b",
+        "android_client_info": {
+          "package_name": "com.KengaBoo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "576599511074-hj6qtfutu6lctb5ov4j0o6nvr1b9jh27.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.KengaBoo",
+            "certificate_hash": "f1b37bdd4101221b64014a87dcf7290dab528b89"
+          }
+        },
+        {
+          "client_id": "576599511074-9umtbedr8jlf4qrk4are4g09ve01a5q3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZZisDYXhlKG9CA4Y-ZEbWHSzEUdJcxaI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "576599511074-9umtbedr8jlf4qrk4are4g09ve01a5q3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "576599511074-og680qprbhahb2n4f4a32qhhphv8iuhn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.KengaBoo"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
