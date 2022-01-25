@@ -93,26 +93,10 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                     ),
                   ),
                 ),
-                Align(
-                  alignment: AlignmentDirectional(0, -0.75),
-                  child: AuthUserStreamWidget(
-                    child: InkWell(
-                      onTap: () async {
-                        await showModalBottomSheet(
-                          isScrollControlled: true,
-                          context: context,
-                          builder: (context) {
-                            return Padding(
-                              padding: MediaQuery.of(context).viewInsets,
-                              child: Container(
-                                height:
-                                    MediaQuery.of(context).size.height * 0.3,
-                                child: EditProfileWidget(),
-                              ),
-                            );
-                          },
-                        );
-                      },
+                if ((currentUserPhoto) != 'null')
+                  Align(
+                    alignment: AlignmentDirectional(0, -0.75),
+                    child: AuthUserStreamWidget(
                       child: Container(
                         width: 160,
                         height: 160,
@@ -120,44 +104,8 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                         ),
-                        child: Image.asset(
-                          'assets/images/Component_2.png',
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                if ((currentUserPhoto) != 'null')
-                  Align(
-                    alignment: AlignmentDirectional(0, -0.75),
-                    child: AuthUserStreamWidget(
-                      child: InkWell(
-                        onTap: () async {
-                          await showModalBottomSheet(
-                            isScrollControlled: true,
-                            context: context,
-                            builder: (context) {
-                              return Padding(
-                                padding: MediaQuery.of(context).viewInsets,
-                                child: Container(
-                                  height:
-                                      MediaQuery.of(context).size.height * 0.3,
-                                  child: EditProfileWidget(),
-                                ),
-                              );
-                            },
-                          );
-                        },
-                        child: Container(
-                          width: 160,
-                          height: 160,
-                          clipBehavior: Clip.antiAlias,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                          ),
-                          child: Image.network(
-                            currentUserPhoto,
-                          ),
+                        child: Image.network(
+                          currentUserPhoto,
                         ),
                       ),
                     ),
@@ -196,10 +144,24 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                     ),
                     child: Align(
                       alignment: AlignmentDirectional(0.33, -0.46),
-                      child: Icon(
-                        Icons.add_circle,
-                        color: Color(0xFF0FB77A),
-                        size: 35,
+                      child: InkWell(
+                        onTap: () async {
+                          await showModalBottomSheet(
+                            isScrollControlled: true,
+                            context: context,
+                            builder: (context) {
+                              return Padding(
+                                padding: MediaQuery.of(context).viewInsets,
+                                child: EditProfileWidget(),
+                              );
+                            },
+                          );
+                        },
+                        child: Icon(
+                          Icons.add_circle,
+                          color: Color(0xFF0FB77A),
+                          size: 35,
+                        ),
                       ),
                     ),
                   ),
