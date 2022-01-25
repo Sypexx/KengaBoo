@@ -165,39 +165,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             children: [
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    25, 50, 25, 0),
-                                child: Container(
-                                  width: MediaQuery.of(context).size.width,
-                                  height:
-                                      MediaQuery.of(context).size.height * 0.2,
-                                  decoration: BoxDecoration(
-                                    color: Color(0xFFFD8E0D),
-                                    borderRadius: BorderRadius.circular(20),
-                                    shape: BoxShape.rectangle,
-                                  ),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        'KengaBoo',
-                                        textAlign: TextAlign.center,
-                                        style:
-                                            FlutterFlowTheme.bodyText1.override(
-                                          fontFamily: 'Permanent Marker',
-                                          color: Color(0xFFFAE9E9),
-                                          fontSize: 55,
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
                                     50, 30, 50, 0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
@@ -209,7 +176,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       ),
                                     );
                                   },
-                                  text: 'Регистрация',
+                                  text: 'Играть',
                                   options: FFButtonOptions(
                                     width: double.infinity,
                                     height: 80,
