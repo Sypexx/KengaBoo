@@ -3,6 +3,7 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../home_page/home_page_widget.dart';
+import '../select_cat_page/select_cat_page_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -161,8 +162,13 @@ class _MainPageWidgetState extends State<MainPageWidget> {
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(50, 0, 50, 0),
               child: FFButtonWidget(
-                onPressed: () {
-                  print('Button pressed ...');
+                onPressed: () async {
+                  await Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SelectCatPageWidget(),
+                    ),
+                  );
                 },
                 text: 'НАЧАТЬ',
                 options: FFButtonOptions(

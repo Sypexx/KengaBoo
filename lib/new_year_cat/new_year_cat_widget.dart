@@ -238,6 +238,20 @@ class _NewYearCatWidgetState extends State<NewYearCatWidget> {
                 ],
               ),
             ),
+            Align(
+              alignment: AlignmentDirectional(-0.95, -1),
+              child: InkWell(
+                onTap: () async {
+                  Navigator.pop(context);
+                },
+                child: Image.asset(
+                  'assets/images/pngwing_2.png',
+                  width: MediaQuery.of(context).size.width * 0.08,
+                  height: 100,
+                  fit: BoxFit.contain,
+                ),
+              ),
+            ),
           ],
         ),
       ),

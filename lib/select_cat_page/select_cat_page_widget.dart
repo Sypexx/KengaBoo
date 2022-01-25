@@ -1,6 +1,7 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../new_year_cat/new_year_cat_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -33,6 +34,20 @@ class _SelectCatPageWidgetState extends State<SelectCatPageWidget> {
         ),
         child: Stack(
           children: [
+            Align(
+              alignment: AlignmentDirectional(-0.95, -1),
+              child: InkWell(
+                onTap: () async {
+                  Navigator.pop(context);
+                },
+                child: Image.asset(
+                  'assets/images/pngwing_2.png',
+                  width: MediaQuery.of(context).size.width * 0.08,
+                  height: 100,
+                  fit: BoxFit.contain,
+                ),
+              ),
+            ),
             Align(
               alignment: AlignmentDirectional(-1, 1),
               child: Image.asset(
@@ -91,8 +106,13 @@ class _SelectCatPageWidgetState extends State<SelectCatPageWidget> {
                         borderRadius: BorderRadius.circular(50),
                       ),
                       child: FFButtonWidget(
-                        onPressed: () {
-                          print('Button pressed ...');
+                        onPressed: () async {
+                          await Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => NewYearCatWidget(),
+                            ),
+                          );
                         },
                         text: 'Новый год',
                         options: FFButtonOptions(
