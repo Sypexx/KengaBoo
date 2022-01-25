@@ -6,14 +6,14 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 
-class RegistrationPassWidget extends StatefulWidget {
-  const RegistrationPassWidget({Key key}) : super(key: key);
+class LoginPageWidget extends StatefulWidget {
+  const LoginPageWidget({Key key}) : super(key: key);
 
   @override
-  _RegistrationPassWidgetState createState() => _RegistrationPassWidgetState();
+  _LoginPageWidgetState createState() => _LoginPageWidgetState();
 }
 
-class _RegistrationPassWidgetState extends State<RegistrationPassWidget> {
+class _LoginPageWidgetState extends State<LoginPageWidget> {
   TextEditingController textController1;
   TextEditingController textController2;
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -101,7 +101,7 @@ class _RegistrationPassWidgetState extends State<RegistrationPassWidget> {
                               ],
                             ),
                             Text(
-                              'Придумайте пароль',
+                              'Номер телефона',
                               style: FlutterFlowTheme.bodyText1.override(
                                 fontFamily: 'Poppins',
                                 color: Colors.white,
@@ -137,7 +137,7 @@ class _RegistrationPassWidgetState extends State<RegistrationPassWidget> {
                               ),
                             ),
                             Text(
-                              'Введите пароль повторно',
+                              'Пароль',
                               style: FlutterFlowTheme.bodyText1.override(
                                 fontFamily: 'Poppins',
                                 color: Colors.white,

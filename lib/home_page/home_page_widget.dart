@@ -81,47 +81,25 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             ),
                             Align(
                               alignment: AlignmentDirectional(1, 0),
-                              child: Container(
-                                width: MediaQuery.of(context).size.width * 0.75,
-                                height:
-                                    MediaQuery.of(context).size.height * 0.25,
-                                decoration: BoxDecoration(),
-                                child: Image.asset(
-                                  'assets/images/NicePng_teacher-clipart-png_1919532_1.png',
-                                  fit: BoxFit.contain,
+                              child: Padding(
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(0, 50, 0, 0),
+                                child: Container(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.75,
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.25,
+                                  decoration: BoxDecoration(),
+                                  child: Image.asset(
+                                    'assets/images/NicePng_teacher-clipart-png_1919532_1.png',
+                                    fit: BoxFit.contain,
+                                  ),
                                 ),
                               ),
                             ),
                             Padding(
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(50, 0, 50, 0),
-                              child: FFButtonWidget(
-                                onPressed: () {
-                                  print('Button pressed ...');
-                                },
-                                text: 'Вход',
-                                options: FFButtonOptions(
-                                  width: double.infinity,
-                                  height: 80,
-                                  color: Color(0xFFD24545),
-                                  textStyle:
-                                      FlutterFlowTheme.subtitle2.override(
-                                    fontFamily: 'Poppins',
-                                    color: Colors.white,
-                                    fontSize: 36,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                  borderSide: BorderSide(
-                                    color: Colors.white,
-                                    width: 5,
-                                  ),
-                                  borderRadius: 20,
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(50, 30, 50, 0),
                               child: FFButtonWidget(
                                 onPressed: () async {
                                   await Navigator.push(
@@ -132,7 +110,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     ),
                                   );
                                 },
-                                text: 'Регистрация',
+                                text: 'Вход',
                                 options: FFButtonOptions(
                                   width: double.infinity,
                                   height: 80,
