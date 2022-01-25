@@ -30,6 +30,40 @@ class _ChatPageWidgetState extends State<ChatPageWidget> {
             ).image,
           ),
         ),
+        child: Stack(
+          children: [
+            Align(
+              alignment: AlignmentDirectional(0, -0.15),
+              child: Container(
+                width: 35,
+                height: 35,
+                decoration: BoxDecoration(
+                  color: Color(0xFFEEEEEE),
+                  borderRadius: BorderRadius.circular(100),
+                ),
+                child: Align(
+                  alignment: AlignmentDirectional(0, -0.46),
+                  child: Icon(
+                    Icons.add_circle,
+                    color: Color(0xFF0FB77A),
+                    size: 35,
+                  ),
+                ),
+              ),
+            ),
+            Align(
+              alignment: AlignmentDirectional(0, -0.29),
+              child: Text(
+                'Создать чат',
+                style: FlutterFlowTheme.bodyText1.override(
+                  fontFamily: 'Poppins',
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

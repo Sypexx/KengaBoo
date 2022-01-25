@@ -1,9 +1,13 @@
 import '../auth/auth_util.dart';
+import '../contacts/contacts_widget.dart';
+import '../faq/faq_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../home_page/home_page_widget.dart';
 import '../select_cat_page/select_cat_page_widget.dart';
+import '../settings/settings_widget.dart';
+import '../version/version_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -81,28 +85,68 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                       children: [
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
-                          child: Text(
-                            'Настройки',
-                            style: FlutterFlowTheme.bodyText1,
+                          child: InkWell(
+                            onTap: () async {
+                              await Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => SettingsWidget(),
+                                ),
+                              );
+                            },
+                            child: Text(
+                              'Настройки',
+                              style: FlutterFlowTheme.bodyText1,
+                            ),
                           ),
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
-                          child: Text(
-                            'Контакты',
-                            style: FlutterFlowTheme.bodyText1,
+                          child: InkWell(
+                            onTap: () async {
+                              await Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ContactsWidget(),
+                                ),
+                              );
+                            },
+                            child: Text(
+                              'Контакты',
+                              style: FlutterFlowTheme.bodyText1,
+                            ),
                           ),
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
-                          child: Text(
-                            'Частые вопросы',
-                            style: FlutterFlowTheme.bodyText1,
+                          child: InkWell(
+                            onTap: () async {
+                              await Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => FaqWidget(),
+                                ),
+                              );
+                            },
+                            child: Text(
+                              'Частые вопросы',
+                              style: FlutterFlowTheme.bodyText1,
+                            ),
                           ),
                         ),
-                        Text(
-                          'О версии',
-                          style: FlutterFlowTheme.bodyText1,
+                        InkWell(
+                          onTap: () async {
+                            await Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => VersionWidget(),
+                              ),
+                            );
+                          },
+                          child: Text(
+                            'О версии',
+                            style: FlutterFlowTheme.bodyText1,
+                          ),
                         ),
                       ],
                     ),
