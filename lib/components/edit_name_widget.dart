@@ -61,9 +61,7 @@ class _EditNameWidgetState extends State<EditNameWidget> {
                 obscureText: false,
                 decoration: InputDecoration(
                   labelText: 'Введите имя',
-                  labelStyle: FlutterFlowTheme.bodyText1,
                   hintText: '[Some hint text...]',
-                  hintStyle: FlutterFlowTheme.bodyText1,
                   enabledBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
                       color: Color(0x00000000),
@@ -97,7 +95,7 @@ class _EditNameWidgetState extends State<EditNameWidget> {
                     displayName: textController.text,
                   );
                   await currentUserReference.update(usersUpdateData);
-                  await Duration(milliseconds: 1000);
+                  await Future.delayed(const Duration(milliseconds: 1000));
                   Navigator.pop(context);
                 },
                 text: 'Изменить',
