@@ -3,6 +3,7 @@ import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../new_year_cat/new_year_cat_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SelectCatPageWidget extends StatefulWidget {
@@ -28,23 +29,22 @@ class _SelectCatPageWidgetState extends State<SelectCatPageWidget> {
           image: DecorationImage(
             fit: BoxFit.cover,
             image: Image.asset(
-              'assets/images/Teacherwall.png',
+              'assets/images/__.png',
             ).image,
           ),
         ),
         child: Stack(
           children: [
             Align(
-              alignment: AlignmentDirectional(-0.95, -1),
+              alignment: AlignmentDirectional(-0.9, -0.9),
               child: InkWell(
                 onTap: () async {
                   Navigator.pop(context);
                 },
-                child: Image.asset(
-                  'assets/images/pngwing_2.png',
-                  width: MediaQuery.of(context).size.width * 0.08,
-                  height: 100,
-                  fit: BoxFit.contain,
+                child: FaIcon(
+                  FontAwesomeIcons.arrowLeft,
+                  color: Colors.black,
+                  size: 32,
                 ),
               ),
             ),

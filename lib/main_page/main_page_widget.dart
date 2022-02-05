@@ -9,6 +9,7 @@ import '../select_cat_page/select_cat_page_widget.dart';
 import '../settings/settings_widget.dart';
 import '../version/version_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MainPageWidget extends StatefulWidget {
@@ -189,7 +190,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
           image: DecorationImage(
             fit: BoxFit.cover,
             image: Image.asset(
-              'assets/images/Teacherwall.png',
+              'assets/images/image_4.png',
             ).image,
           ),
         ),
@@ -198,7 +199,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              'assets/images/teacher.png',
+              'assets/images/kisscc0-kindergarten-teacher-2-5c8f68787f2e97_1.png',
               width: MediaQuery.of(context).size.width * 0.5,
               height: MediaQuery.of(context).size.height * 0.25,
               fit: BoxFit.fill,
@@ -226,10 +227,10 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                     fontWeight: FontWeight.w600,
                   ),
                   borderSide: BorderSide(
-                    color: Color(0xFF63E3FF),
+                    color: Colors.white,
                     width: 5,
                   ),
-                  borderRadius: 20,
+                  borderRadius: 64,
                 ),
               ),
             ),

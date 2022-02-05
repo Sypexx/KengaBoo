@@ -1,6 +1,7 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ContactsWidget extends StatefulWidget {
@@ -43,6 +44,15 @@ class _ContactsWidgetState extends State<ContactsWidget> {
               ),
             ),
             Align(
+              alignment: AlignmentDirectional(0, 0.05),
+              child: Image.asset(
+                'assets/images/Frame_3.png',
+                width: MediaQuery.of(context).size.width * 0.5,
+                height: MediaQuery.of(context).size.height * 0.3,
+                fit: BoxFit.contain,
+              ),
+            ),
+            Align(
               alignment: AlignmentDirectional(0, -0.75),
               child: Container(
                 width: 140,
@@ -58,53 +68,6 @@ class _ContactsWidgetState extends State<ContactsWidget> {
               ),
             ),
             Align(
-              alignment: AlignmentDirectional(0, 0.1),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Align(
-                    alignment: AlignmentDirectional(0, -0.1),
-                    child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 15),
-                      child: Image.asset(
-                        'assets/images/Group_3.png',
-                        width: MediaQuery.of(context).size.width * 0.5,
-                        height: MediaQuery.of(context).size.height * 0.05,
-                        fit: BoxFit.contain,
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 15),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(50),
-                      child: Image.asset(
-                        'assets/images/twitter.png',
-                        width: MediaQuery.of(context).size.width * 0.5,
-                        height: MediaQuery.of(context).size.height * 0.05,
-                        fit: BoxFit.contain,
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 15),
-                    child: Image.asset(
-                      'assets/images/Group_5.png',
-                      width: MediaQuery.of(context).size.width * 0.5,
-                      height: MediaQuery.of(context).size.height * 0.05,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  Image.asset(
-                    'assets/images/Group_6.png',
-                    width: MediaQuery.of(context).size.width * 0.5,
-                    height: MediaQuery.of(context).size.height * 0.05,
-                    fit: BoxFit.cover,
-                  ),
-                ],
-              ),
-            ),
-            Align(
               alignment: AlignmentDirectional(0, -0.4),
               child: Text(
                 'Контакты',
@@ -116,16 +79,15 @@ class _ContactsWidgetState extends State<ContactsWidget> {
               ),
             ),
             Align(
-              alignment: AlignmentDirectional(-0.95, -1),
+              alignment: AlignmentDirectional(-0.9, -0.85),
               child: InkWell(
                 onTap: () async {
                   Navigator.pop(context);
                 },
-                child: Image.asset(
-                  'assets/images/pngwing_2.png',
-                  width: MediaQuery.of(context).size.width * 0.08,
-                  height: 130,
-                  fit: BoxFit.contain,
+                child: FaIcon(
+                  FontAwesomeIcons.arrowLeft,
+                  color: Colors.black,
+                  size: 32,
                 ),
               ),
             ),

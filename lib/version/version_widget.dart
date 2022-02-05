@@ -1,6 +1,7 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class VersionWidget extends StatefulWidget {
@@ -84,16 +85,15 @@ class _VersionWidgetState extends State<VersionWidget> {
               ),
             ),
             Align(
-              alignment: AlignmentDirectional(-0.95, -1),
+              alignment: AlignmentDirectional(-0.9, -0.85),
               child: InkWell(
                 onTap: () async {
                   Navigator.pop(context);
                 },
-                child: Image.asset(
-                  'assets/images/pngwing_2.png',
-                  width: MediaQuery.of(context).size.width * 0.08,
-                  height: 130,
-                  fit: BoxFit.contain,
+                child: FaIcon(
+                  FontAwesomeIcons.arrowLeft,
+                  color: Colors.black,
+                  size: 32,
                 ),
               ),
             ),
