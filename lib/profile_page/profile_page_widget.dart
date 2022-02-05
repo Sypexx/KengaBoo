@@ -104,24 +104,12 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                       ),
-                      child: Image.asset(
-                        'assets/images/Component_2.png',
-                      ),
-                    ),
-                  ),
-                ),
-                Align(
-                  alignment: AlignmentDirectional(0, -0.75),
-                  child: AuthUserStreamWidget(
-                    child: Container(
-                      width: 160,
-                      height: 160,
-                      clipBehavior: Clip.antiAlias,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                      ),
                       child: Image.network(
-                        currentUserPhoto,
+                        valueOrDefault<String>(
+                          currentUserPhoto,
+                          'https://firebasestorage.googleapis.com/v0/b/kengaboo-468f8.appspot.com/o/avatar%2FComponent%202.png?alt=media&token=405ff81f-9fd3-4db7-b1ee-290a70f455eb',
+                        ),
+                        fit: BoxFit.fitWidth,
                       ),
                     ),
                   ),
