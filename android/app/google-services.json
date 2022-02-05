@@ -22,6 +22,14 @@
           }
         },
         {
+          "client_id": "576599511074-u75u2skcrgengiufr6rkq7bkd40voa07.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.KengaBoo",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
           "client_id": "576599511074-9umtbedr8jlf4qrk4are4g09ve01a5q3.apps.googleusercontent.com",
           "client_type": 3
         }
