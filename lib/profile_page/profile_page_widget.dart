@@ -94,23 +94,38 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                     ),
                   ),
                 ),
-                if ((currentUserPhoto) != 'null')
-                  Align(
-                    alignment: AlignmentDirectional(0, -0.75),
-                    child: AuthUserStreamWidget(
-                      child: Container(
-                        width: 160,
-                        height: 160,
-                        clipBehavior: Clip.antiAlias,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                        ),
-                        child: Image.network(
-                          currentUserPhoto,
-                        ),
+                Align(
+                  alignment: AlignmentDirectional(0, -0.75),
+                  child: AuthUserStreamWidget(
+                    child: Container(
+                      width: 160,
+                      height: 160,
+                      clipBehavior: Clip.antiAlias,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                      ),
+                      child: Image.asset(
+                        'assets/images/Component_2.png',
                       ),
                     ),
                   ),
+                ),
+                Align(
+                  alignment: AlignmentDirectional(0, -0.75),
+                  child: AuthUserStreamWidget(
+                    child: Container(
+                      width: 160,
+                      height: 160,
+                      clipBehavior: Clip.antiAlias,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                      ),
+                      child: Image.network(
+                        currentUserPhoto,
+                      ),
+                    ),
+                  ),
+                ),
                 Align(
                   alignment: AlignmentDirectional(0, 0.05),
                   child: Container(

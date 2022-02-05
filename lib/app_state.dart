@@ -15,6 +15,8 @@ class FFAppState {
   Future initializePersistedState() async {
     prefs = await SharedPreferences.getInstance();
     _defimg = prefs.getString('ff_defimg') ?? _defimg;
+    _click = prefs.getString('ff_click') ?? _click;
+    _YOYOYOOY = prefs.getString('ff_YOYOYOOY') ?? _YOYOYOOY;
   }
 
   SharedPreferences prefs;
@@ -27,6 +29,20 @@ class FFAppState {
   }
 
   String Clicksound;
+
+  String _click;
+  String get click => _click;
+  set click(String _value) {
+    _click = _value;
+    prefs.setString('ff_click', _value);
+  }
+
+  String _YOYOYOOY = '';
+  String get YOYOYOOY => _YOYOYOOY;
+  set YOYOYOOY(String _value) {
+    _YOYOYOOY = _value;
+    prefs.setString('ff_YOYOYOOY', _value);
+  }
 }
 
 LatLng _latLngFromString(String val) {
