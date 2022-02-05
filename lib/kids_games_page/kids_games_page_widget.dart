@@ -2,6 +2,7 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../game1/game1_widget.dart';
+import '../game1/game2_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -77,8 +78,13 @@ class _KidsGamesPageWidgetState extends State<KidsGamesPageWidget> {
                     child: Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(50, 20, 50, 0),
                       child: FFButtonWidget(
-                        onPressed: () {
-                          print('Button pressed ...');
+                        onPressed: () async {
+                          await Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Game2Widget(),
+                            ),
+                          );
                         },
                         text: 'Игра 2',
                         options: FFButtonOptions(
