@@ -105,10 +105,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                         shape: BoxShape.circle,
                       ),
                       child: Image.network(
-                        valueOrDefault<String>(
-                          currentUserPhoto,
-                          'https://firebasestorage.googleapis.com/v0/b/kengaboo-468f8.appspot.com/o/avatar%2FComponent%202.png?alt=media&token=405ff81f-9fd3-4db7-b1ee-290a70f455eb',
-                        ),
+                        currentUserPhoto,
                         fit: BoxFit.fitWidth,
                       ),
                     ),
