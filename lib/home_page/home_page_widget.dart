@@ -3,6 +3,7 @@ import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../game1/game1_widget.dart';
 import '../registration_number/registration_number_widget.dart';
+import '../custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -161,6 +162,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                 builder: (context) => Game1Widget(),
                               ),
                             );
+                            await actions.buttonClick();
                           },
                           text: 'ИГРАТЬ',
                           options: FFButtonOptions(

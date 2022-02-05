@@ -25,6 +25,8 @@ class FFAppState {
     _defimg = _value;
     prefs.setString('ff_defimg', _value);
   }
+
+  String Clicksound;
 }
 
 LatLng _latLngFromString(String val) {
