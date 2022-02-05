@@ -1,8 +1,8 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../game1/game1_widget.dart';
 import '../registration_number/registration_number_widget.dart';
-import '../select_cat_page/select_cat_page_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -158,7 +158,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             await Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => SelectCatPageWidget(),
+                                builder: (context) => Game1Widget(),
                               ),
                             );
                           },
@@ -183,12 +183,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       ),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(-0.55, -0.02),
+                      alignment: AlignmentDirectional(-0.55, -0.05),
                       child: Image.asset(
                         'assets/images/1621595423_27-phonoteka_org-p-stikeri-bez-zadnego-fona-33_1.png',
                         width: MediaQuery.of(context).size.width * 0.85,
-                        height: MediaQuery.of(context).size.height * 0.4,
-                        fit: BoxFit.contain,
+                        height: MediaQuery.of(context).size.height * 0.3,
+                        fit: BoxFit.cover,
                       ),
                     ),
                   ],
