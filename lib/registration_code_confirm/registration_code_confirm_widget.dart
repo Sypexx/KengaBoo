@@ -1,10 +1,8 @@
 import '../auth/auth_util.dart';
-import '../backend/backend.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../main.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -130,11 +128,6 @@ class _RegistrationCodeConfirmWidgetState
                       if (phoneVerifiedUser == null) {
                         return;
                       }
-
-                      final usersUpdateData = createUsersRecordData(
-                        photoUrl: FFAppState().defimg,
-                      );
-                      await currentUserReference.update(usersUpdateData);
                       await Navigator.pushAndRemoveUntil(
                         context,
                         MaterialPageRoute(

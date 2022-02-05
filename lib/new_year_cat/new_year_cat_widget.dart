@@ -1,6 +1,10 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../new_year_cons/new_year_cons_widget.dart';
+import '../new_year_games/new_year_games_widget.dart';
+import '../new_year_scenarios/new_year_scenarios_widget.dart';
+import '../new_year_stih/new_year_stih_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -84,8 +88,16 @@ class _NewYearCatWidgetState extends State<NewYearCatWidget> {
                         borderRadius: BorderRadius.circular(50),
                       ),
                       child: FFButtonWidget(
-                        onPressed: () {
-                          print('Button pressed ...');
+                        onPressed: () async {
+                          await Navigator.push(
+                            context,
+                            PageTransition(
+                              type: PageTransitionType.leftToRight,
+                              duration: Duration(milliseconds: 300),
+                              reverseDuration: Duration(milliseconds: 300),
+                              child: NewYearGamesWidget(),
+                            ),
+                          );
                         },
                         text: 'Игры',
                         options: FFButtonOptions(
@@ -117,8 +129,16 @@ class _NewYearCatWidgetState extends State<NewYearCatWidget> {
                         borderRadius: BorderRadius.circular(50),
                       ),
                       child: FFButtonWidget(
-                        onPressed: () {
-                          print('Button pressed ...');
+                        onPressed: () async {
+                          await Navigator.push(
+                            context,
+                            PageTransition(
+                              type: PageTransitionType.leftToRight,
+                              duration: Duration(milliseconds: 300),
+                              reverseDuration: Duration(milliseconds: 300),
+                              child: NewYearConsWidget(),
+                            ),
+                          );
                         },
                         text: 'Конспекты занятий',
                         options: FFButtonOptions(
@@ -150,8 +170,13 @@ class _NewYearCatWidgetState extends State<NewYearCatWidget> {
                         borderRadius: BorderRadius.circular(50),
                       ),
                       child: FFButtonWidget(
-                        onPressed: () {
-                          print('Button pressed ...');
+                        onPressed: () async {
+                          await Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => NewYearScenariosWidget(),
+                            ),
+                          );
                         },
                         text: 'Сценарии мероприятий',
                         options: FFButtonOptions(
@@ -183,8 +208,16 @@ class _NewYearCatWidgetState extends State<NewYearCatWidget> {
                         borderRadius: BorderRadius.circular(50),
                       ),
                       child: FFButtonWidget(
-                        onPressed: () {
-                          print('Button pressed ...');
+                        onPressed: () async {
+                          await Navigator.push(
+                            context,
+                            PageTransition(
+                              type: PageTransitionType.leftToRight,
+                              duration: Duration(milliseconds: 300),
+                              reverseDuration: Duration(milliseconds: 300),
+                              child: NewYearStihWidget(),
+                            ),
+                          );
                         },
                         text: 'Стихи и песни',
                         options: FFButtonOptions(

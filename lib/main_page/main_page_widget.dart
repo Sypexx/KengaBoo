@@ -210,8 +210,11 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                 onPressed: () async {
                   await Navigator.push(
                     context,
-                    MaterialPageRoute(
-                      builder: (context) => SelectCatPageWidget(),
+                    PageTransition(
+                      type: PageTransitionType.leftToRight,
+                      duration: Duration(milliseconds: 300),
+                      reverseDuration: Duration(milliseconds: 300),
+                      child: SelectCatPageWidget(),
                     ),
                   );
                 },
