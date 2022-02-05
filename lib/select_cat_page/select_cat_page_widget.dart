@@ -239,7 +239,7 @@ class _SelectCatPageWidgetState extends State<SelectCatPageWidget> {
             Align(
               alignment: AlignmentDirectional(1.01, 0.89),
               child: Image.asset(
-                'assets/images/Union.png',
+                'assets/images/Union_(1).png',
                 width: MediaQuery.of(context).size.width * 0.55,
                 height: MediaQuery.of(context).size.height * 0.2,
                 fit: BoxFit.contain,
