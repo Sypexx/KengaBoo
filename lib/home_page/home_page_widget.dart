@@ -1,3 +1,5 @@
+import 'package:kenga_boo/kids_games_page/kids_games_page_widget.dart';
+
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
@@ -159,7 +161,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             await Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => Game1Widget(),
+                                builder: (context) => KidsGamesPageWidget(),
                               ),
                             );
                             await actions.buttonClick();

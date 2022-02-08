@@ -27,19 +27,6 @@ class _NewYearStihWidgetState extends State<NewYearStihWidget> {
         ),
         child: Stack(
           children: [
-            Align(
-              alignment: AlignmentDirectional(-0.9, -0.9),
-              child: InkWell(
-                onTap: () async {
-                  Navigator.pop(context);
-                },
-                child: FaIcon(
-                  FontAwesomeIcons.arrowLeft,
-                  color: Colors.black,
-                  size: 32,
-                ),
-              ),
-            ),
             Image.asset(
               'assets/images/image_6.png',
               width: MediaQuery.of(context).size.width,
@@ -75,6 +62,19 @@ class _NewYearStihWidgetState extends State<NewYearStihWidget> {
                       ],
                     ),
                   ),
+                ),
+              ),
+            ),
+            Align(
+              alignment: AlignmentDirectional(-0.9, -0.9),
+              child: InkWell(
+                onTap: () async {
+                  Navigator.pop(context);
+                },
+                child: FaIcon(
+                  FontAwesomeIcons.arrowLeft,
+                  color: Colors.black,
+                  size: 32,
                 ),
               ),
             ),
