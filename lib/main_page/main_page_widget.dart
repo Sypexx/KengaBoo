@@ -194,46 +194,63 @@ class _MainPageWidgetState extends State<MainPageWidget> {
             ).image,
           ),
         ),
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: Stack(
           children: [
-            Image.asset(
-              'assets/images/kisscc0-kindergarten-teacher-2-5c8f68787f2e97_1.png',
-              width: MediaQuery.of(context).size.width * 0.5,
-              height: MediaQuery.of(context).size.height * 0.25,
-              fit: BoxFit.fill,
-            ),
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(50, 0, 50, 0),
-              child: FFButtonWidget(
-                onPressed: () async {
-                  await Navigator.push(
-                    context,
-                    PageTransition(
-                      type: PageTransitionType.leftToRight,
-                      duration: Duration(milliseconds: 300),
-                      reverseDuration: Duration(milliseconds: 300),
-                      child: SelectCatPageWidget(),
+            Column(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  'assets/images/kisscc0-kindergarten-teacher-2-5c8f68787f2e97_1.png',
+                  width: MediaQuery.of(context).size.width * 0.5,
+                  height: MediaQuery.of(context).size.height * 0.25,
+                  fit: BoxFit.fill,
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(50, 0, 50, 0),
+                  child: FFButtonWidget(
+                    onPressed: () async {
+                      await Navigator.push(
+                        context,
+                        PageTransition(
+                          type: PageTransitionType.leftToRight,
+                          duration: Duration(milliseconds: 300),
+                          reverseDuration: Duration(milliseconds: 300),
+                          child: SelectCatPageWidget(),
+                        ),
+                      );
+                    },
+                    text: 'НАЧАТЬ',
+                    options: FFButtonOptions(
+                      width: double.infinity,
+                      height: 100,
+                      color: Color(0xFF2391CF),
+                      textStyle: FlutterFlowTheme.subtitle2.override(
+                        fontFamily: 'Poppins',
+                        color: Colors.white,
+                        fontSize: 36,
+                        fontWeight: FontWeight.w600,
+                      ),
+                      borderSide: BorderSide(
+                        color: Colors.white,
+                        width: 5,
+                      ),
+                      borderRadius: 64,
                     ),
-                  );
+                  ),
+                ),
+              ],
+            ),
+            Align(
+              alignment: AlignmentDirectional(-0.9, -0.9),
+              child: InkWell(
+                onTap: () async {
+                  scaffoldKey.currentState.openDrawer();
                 },
-                text: 'НАЧАТЬ',
-                options: FFButtonOptions(
-                  width: double.infinity,
-                  height: 100,
-                  color: Color(0xFF2391CF),
-                  textStyle: FlutterFlowTheme.subtitle2.override(
-                    fontFamily: 'Poppins',
-                    color: Colors.white,
-                    fontSize: 36,
-                    fontWeight: FontWeight.w600,
-                  ),
-                  borderSide: BorderSide(
-                    color: Colors.white,
-                    width: 5,
-                  ),
-                  borderRadius: 64,
+                child: FaIcon(
+                  FontAwesomeIcons.bars,
+                  color: Colors.white,
+                  size: 32,
                 ),
               ),
             ),

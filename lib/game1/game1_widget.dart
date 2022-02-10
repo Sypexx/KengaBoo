@@ -18,7 +18,7 @@ class _Game1WidgetState extends State<Game1Widget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: Color(0xFFF5F5F5),
+      backgroundColor: Colors.brown[500],
       body: GestureDetector(
         onTap: () => FocusScope.of(context).unfocus(),
         child: custom_widgets.Game1(

@@ -41,7 +41,7 @@ class _NewYearStihWidgetState extends State<NewYearStihWidget> {
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height * 0.8,
                   decoration: BoxDecoration(
-                    color: Color(0xB3FFFFFF),
+                    color: Color(0xE6FFFFFF),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: SingleChildScrollView(

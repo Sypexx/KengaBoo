@@ -5,6 +5,7 @@ import '../game1/game1_widget.dart';
 import '../game1/game2_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class KidsGamesPageWidget extends StatefulWidget {
   const KidsGamesPageWidget({Key key}) : super(key: key);
@@ -163,6 +164,19 @@ class _KidsGamesPageWidgetState extends State<KidsGamesPageWidget> {
                     ),
                   ),
                 ],
+              ),
+            ),
+            Align(
+              alignment: AlignmentDirectional(-0.9, -0.9),
+              child: InkWell(
+                onTap: () async {
+                  Navigator.pop(context);
+                },
+                child: FaIcon(
+                  FontAwesomeIcons.arrowLeft,
+                  color: Colors.black,
+                  size: 32,
+                ),
               ),
             ),
           ],

@@ -27,19 +27,6 @@ class _NewYearScen3WidgetState extends State<NewYearScen3Widget> {
         ),
         child: Stack(
           children: [
-            Align(
-              alignment: AlignmentDirectional(-0.9, -0.9),
-              child: InkWell(
-                onTap: () async {
-                  Navigator.pop(context);
-                },
-                child: FaIcon(
-                  FontAwesomeIcons.arrowLeft,
-                  color: Colors.black,
-                  size: 32,
-                ),
-              ),
-            ),
             Image.asset(
               'assets/images/image_6.png',
               width: MediaQuery.of(context).size.width,
@@ -54,7 +41,7 @@ class _NewYearScen3WidgetState extends State<NewYearScen3Widget> {
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height * 0.8,
                   decoration: BoxDecoration(
-                    color: Color(0xB3FFFFFF),
+                    color: Color(0xE6FFFFFF),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: SingleChildScrollView(
@@ -75,6 +62,19 @@ class _NewYearScen3WidgetState extends State<NewYearScen3Widget> {
                       ],
                     ),
                   ),
+                ),
+              ),
+            ),
+            Align(
+              alignment: AlignmentDirectional(-0.9, -0.9),
+              child: InkWell(
+                onTap: () async {
+                  Navigator.pop(context);
+                },
+                child: FaIcon(
+                  FontAwesomeIcons.arrowLeft,
+                  color: Colors.black,
+                  size: 32,
                 ),
               ),
             ),

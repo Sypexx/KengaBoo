@@ -8,6 +8,7 @@ import '../registration_number/registration_number_widget.dart';
 import '../custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomePageWidget extends StatefulWidget {
   const HomePageWidget({Key key}) : super(key: key);
@@ -136,6 +137,24 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       ],
                     ),
                   ),
+                  Align(
+                    alignment: AlignmentDirectional(0, 0.7),
+                    child: IconButton(
+                      iconSize: 100,
+                      icon: FaIcon(
+                        FontAwesomeIcons.solidArrowAltCircleRight,
+                        color: Colors.white,
+                        size: 60,
+                      ),
+                      onPressed: () async {
+                        await pageViewController.animateToPage(
+                          1,
+                          duration: Duration(milliseconds: 500),
+                          curve: Curves.ease,
+                        );
+                      },
+                    ),
+                  ),
                 ],
               ),
               Container(
@@ -187,12 +206,30 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       ),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(-0.55, -0.05),
+                      alignment: AlignmentDirectional(-0.1, -0.05),
                       child: Image.asset(
-                        'assets/images/1621595423_27-phonoteka_org-p-stikeri-bez-zadnego-fona-33_1.png',
+                        'assets/images/kotik.png',
                         width: MediaQuery.of(context).size.width * 0.85,
-                        height: MediaQuery.of(context).size.height * 0.3,
-                        fit: BoxFit.cover,
+                        height: MediaQuery.of(context).size.height * 0.28,
+                        fit: BoxFit.contain,
+                      ),
+                    ),
+                    Align(
+                      alignment: AlignmentDirectional(0, 0.7),
+                      child: IconButton(
+                        iconSize: 100,
+                        icon: FaIcon(
+                          FontAwesomeIcons.solidArrowAltCircleLeft,
+                          color: Colors.white,
+                          size: 60,
+                        ),
+                        onPressed: () async {
+                          await pageViewController.animateToPage(
+                            0,
+                            duration: Duration(milliseconds: 500),
+                            curve: Curves.ease,
+                          );
+                        },
                       ),
                     ),
                   ],

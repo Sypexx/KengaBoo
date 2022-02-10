@@ -34,19 +34,6 @@ class _NewYearCon2WidgetState extends State<NewYearCon2Widget> {
         child: Stack(
           children: [
             Align(
-              alignment: AlignmentDirectional(-0.9, -0.9),
-              child: InkWell(
-                onTap: () async {
-                  Navigator.pop(context);
-                },
-                child: FaIcon(
-                  FontAwesomeIcons.arrowLeft,
-                  color: Colors.black,
-                  size: 32,
-                ),
-              ),
-            ),
-            Align(
               alignment: AlignmentDirectional(0.39, 0.32),
               child: Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 40),
@@ -54,7 +41,7 @@ class _NewYearCon2WidgetState extends State<NewYearCon2Widget> {
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height * 0.8,
                   decoration: BoxDecoration(
-                    color: Color(0xB3FFFFFF),
+                    color: Color(0xE6FFFFFF),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: SingleChildScrollView(
@@ -75,6 +62,19 @@ class _NewYearCon2WidgetState extends State<NewYearCon2Widget> {
                       ],
                     ),
                   ),
+                ),
+              ),
+            ),
+            Align(
+              alignment: AlignmentDirectional(-0.9, -0.9),
+              child: InkWell(
+                onTap: () async {
+                  Navigator.pop(context);
+                },
+                child: FaIcon(
+                  FontAwesomeIcons.arrowLeft,
+                  color: Colors.black,
+                  size: 32,
                 ),
               ),
             ),

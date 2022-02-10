@@ -2,6 +2,7 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../kids_games_page/kids_games_page_widget.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -72,8 +73,21 @@ class _KidsMainPageWidgetState extends State<KidsMainPageWidget> {
               child: Image.asset(
                 'assets/images/1621595423_27-phonoteka_org-p-stikeri-bez-zadnego-fona-33_1.png',
                 width: MediaQuery.of(context).size.width * 0.85,
-                height: MediaQuery.of(context).size.height * 0.3,
+                height: MediaQuery.of(context).size.height * 0.4,
                 fit: BoxFit.cover,
+              ),
+            ),
+            Align(
+              alignment: AlignmentDirectional(-0.9, -0.9),
+              child: InkWell(
+                onTap: () async {
+                  Navigator.pop(context);
+                },
+                child: FaIcon(
+                  FontAwesomeIcons.arrowLeft,
+                  color: Colors.black,
+                  size: 32,
+                ),
               ),
             ),
           ],
