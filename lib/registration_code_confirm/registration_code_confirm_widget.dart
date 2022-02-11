@@ -139,8 +139,9 @@ class _RegistrationCodeConfirmWidgetState
                     },
                     text: 'Далее',
                     options: FFButtonOptions(
+                      padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
                       width: 300,
-                      height: 50,
+                      height: 60,
                       color: Color(0xFFD24545),
                       textStyle: FlutterFlowTheme.subtitle2.override(
                         fontFamily: 'Poppins',
@@ -178,6 +179,23 @@ class _RegistrationCodeConfirmWidgetState
                 'assets/images/NicePng_teacher-clipart-2.png',
                 width: MediaQuery.of(context).size.width * 0.5,
                 fit: BoxFit.cover,
+              ),
+            ),
+            Align(
+              alignment: AlignmentDirectional(1.01, 0.89),
+              child: Image.asset(
+                'assets/images/Union2.png',
+                width: MediaQuery.of(context).size.width * 0.55,
+                height: MediaQuery.of(context).size.height * 0.2,
+                fit: BoxFit.contain,
+              ),
+            ),
+            Align(
+              alignment: AlignmentDirectional(0.8, 0.78),
+              child: Text(
+                'Введите код из смс \nв поле для ввода кода\nчтобы подтвердить\nсвою личность',
+                textAlign: TextAlign.center,
+                style: FlutterFlowTheme.bodyText1,
               ),
             ),
           ],

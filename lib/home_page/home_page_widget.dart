@@ -117,13 +117,14 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             },
                             text: 'Регистрация',
                             options: FFButtonOptions(
+                              padding: EdgeInsets.fromLTRB(0, 0, 0, 5),
                               width: double.infinity,
                               height: 80,
                               color: Color(0xFFD24545),
                               textStyle: FlutterFlowTheme.subtitle2.override(
                                 fontFamily: 'Poppins',
                                 color: Colors.white,
-                                fontSize: 36,
+                                fontSize: 34,
                                 fontWeight: FontWeight.w600,
                               ),
                               borderSide: BorderSide(

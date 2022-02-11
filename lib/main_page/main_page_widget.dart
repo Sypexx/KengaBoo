@@ -163,14 +163,14 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                       shape: BoxShape.circle,
                     ),
                     child: Image.network(
-                      'https://picsum.photos/seed/640/600',
+                      currentUserPhoto,
                     ),
                   ),
                 ),
                 Align(
                   alignment: AlignmentDirectional(0, -0.49),
                   child: Text(
-                    'Пользователь',
+                    currentUserDisplayName,
                     style: FlutterFlowTheme.bodyText1.override(
                       fontFamily: 'Poppins',
                       fontWeight: FontWeight.w600,

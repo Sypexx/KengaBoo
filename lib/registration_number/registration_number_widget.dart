@@ -139,8 +139,9 @@ class _RegistrationNumberWidgetState extends State<RegistrationNumberWidget> {
                     },
                     text: 'Далее',
                     options: FFButtonOptions(
+                      padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
                       width: 300,
-                      height: 50,
+                      height: 60,
                       color: Color(0xFFD24545),
                       textStyle: FlutterFlowTheme.subtitle2.override(
                         fontFamily: 'Poppins',
@@ -178,6 +179,23 @@ class _RegistrationNumberWidgetState extends State<RegistrationNumberWidget> {
                 child: Image.asset(
                   'assets/images/dasda_4.png',
                 ),
+              ),
+            ),
+            Align(
+              alignment: AlignmentDirectional(1.01, 0.89),
+              child: Image.asset(
+                'assets/images/Union2.png',
+                width: MediaQuery.of(context).size.width * 0.55,
+                height: MediaQuery.of(context).size.height * 0.2,
+                fit: BoxFit.contain,
+              ),
+            ),
+            Align(
+              alignment: AlignmentDirectional(0.8, 0.77),
+              child: Text(
+                'На ваш номер \nтелефона придет смс\n с кодом',
+                textAlign: TextAlign.center,
+                style: FlutterFlowTheme.bodyText1,
               ),
             ),
           ],
