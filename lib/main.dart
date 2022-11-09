@@ -14,6 +14,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'profile_page/profile_page_widget.dart';
 import 'main_page/main_page_widget.dart';
 import 'chat_page/chat_page_widget.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

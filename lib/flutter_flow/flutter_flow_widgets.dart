@@ -102,18 +102,7 @@ class _FFButtonWidgetState extends State<FFButtonWidget> {
       return Container(
         height: widget.options.height,
         width: widget.options.width,
-        child: RaisedButton.icon(
-          icon: Padding(
-            padding: widget.options.iconPadding ?? EdgeInsets.zero,
-            child: widget.icon ??
-                FaIcon(
-                  widget.iconData,
-                  size: widget.options.iconSize,
-                  color: widget.options.iconColor ??
-                      widget.options.textStyle.color,
-                ),
-          ),
-          label: textWidget,
+        child: MaterialButton(
           onPressed: onPressed,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(widget.options.borderRadius),
@@ -134,7 +123,7 @@ class _FFButtonWidgetState extends State<FFButtonWidget> {
     return Container(
       height: widget.options.height,
       width: widget.options.width,
-      child: RaisedButton(
+      child: MaterialButton(
         onPressed: onPressed,
         shape: RoundedRectangleBorder(
           borderRadius:

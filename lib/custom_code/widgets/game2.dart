@@ -92,7 +92,7 @@ class Game2State extends State<Game2> {
       onAccept: (data) {
         setState(() {
           score[emoji] = true;
-          plyr.play('success.mp3');
+          //plyr.play('success.mp3');
         });
       },
       onLeave: (data) {},

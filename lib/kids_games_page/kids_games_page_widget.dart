@@ -1,8 +1,8 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../game1/game1_widget.dart';
-import '../game1/game2_widget.dart';
+import '../games/game1_widget.dart';
+import '../games/game2_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -20,168 +20,390 @@ class _KidsGamesPageWidgetState extends State<KidsGamesPageWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: scaffoldKey,
-      backgroundColor: Color(0xFFF5F5F5),
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        decoration: BoxDecoration(
-          color: Color(0xFFEEEEEE),
-          image: DecorationImage(
-            fit: BoxFit.cover,
-            image: Image.asset(
-              'assets/images/2003_1_(1).png',
-            ).image,
-          ),
-        ),
-        child: Stack(
-          children: [
-            Align(
-              alignment: AlignmentDirectional(0, 0),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Align(
-                    alignment: AlignmentDirectional(-0.8, -0.68),
-                    child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(50, 0, 50, 0),
-                      child: FFButtonWidget(
-                        onPressed: () async {
-                          await Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => Game1Widget(),
-                            ),
-                          );
-                        },
-                        text: 'Игра 1',
-                        options: FFButtonOptions(
-                          width: double.infinity,
-                          height: 75,
-                          color: Color(0xFFB6133A),
-                          textStyle: FlutterFlowTheme.subtitle2.override(
-                            fontFamily: 'Poppins',
-                            color: Colors.white,
-                            fontSize: 36,
-                            fontWeight: FontWeight.w600,
-                          ),
-                          borderSide: BorderSide(
-                            color: Colors.white,
-                            width: 5,
-                          ),
-                          borderRadius: 64,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Align(
-                    alignment: AlignmentDirectional(-0.8, -0.68),
-                    child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(50, 20, 50, 0),
-                      child: FFButtonWidget(
-                        onPressed: () async {
-                          await Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => Game2Widget(),
-                            ),
-                          );
-                        },
-                        text: 'Игра 2',
-                        options: FFButtonOptions(
-                          width: double.infinity,
-                          height: 75,
-                          color: Color(0xFFB6133A),
-                          textStyle: FlutterFlowTheme.subtitle2.override(
-                            fontFamily: 'Poppins',
-                            color: Colors.white,
-                            fontSize: 36,
-                            fontWeight: FontWeight.w600,
-                          ),
-                          borderSide: BorderSide(
-                            color: Colors.white,
-                            width: 5,
-                          ),
-                          borderRadius: 64,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Align(
-                    alignment: AlignmentDirectional(-0.8, -0.68),
-                    child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(50, 20, 50, 0),
-                      child: FFButtonWidget(
-                        onPressed: () {
-                          print('Button pressed ...');
-                        },
-                        text: 'Игра 3',
-                        options: FFButtonOptions(
-                          width: double.infinity,
-                          height: 75,
-                          color: Color(0xFFB6133A),
-                          textStyle: FlutterFlowTheme.subtitle2.override(
-                            fontFamily: 'Poppins',
-                            color: Colors.white,
-                            fontSize: 36,
-                            fontWeight: FontWeight.w600,
-                          ),
-                          borderSide: BorderSide(
-                            color: Colors.white,
-                            width: 5,
-                          ),
-                          borderRadius: 64,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Align(
-                    alignment: AlignmentDirectional(-0.8, -0.68),
-                    child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(50, 20, 50, 0),
-                      child: FFButtonWidget(
-                        onPressed: () {
-                          print('Button pressed ...');
-                        },
-                        text: 'Игра 4',
-                        options: FFButtonOptions(
-                          width: double.infinity,
-                          height: 75,
-                          color: Color(0xFFB6133A),
-                          textStyle: FlutterFlowTheme.subtitle2.override(
-                            fontFamily: 'Poppins',
-                            color: Colors.white,
-                            fontSize: 36,
-                            fontWeight: FontWeight.w600,
-                          ),
-                          borderSide: BorderSide(
-                            color: Colors.white,
-                            width: 5,
-                          ),
-                          borderRadius: 64,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
+        key: scaffoldKey,
+        backgroundColor: Color(0xFFF5F5F5),
+        body: Container(
+            width: double.infinity,
+            height: double.infinity,
+            decoration: BoxDecoration(
+              color: Color(0xFFEEEEEE),
+              image: DecorationImage(
+                fit: BoxFit.cover,
+                image: Image.asset(
+                  'assets/images/2003_1_(1).png',
+                ).image,
               ),
             ),
-            Align(
-              alignment: AlignmentDirectional(-0.9, -0.9),
-              child: InkWell(
-                onTap: () async {
-                  Navigator.pop(context);
-                },
-                child: FaIcon(
-                  FontAwesomeIcons.arrowLeft,
-                  color: Colors.black,
-                  size: 32,
+            child: Stack(
+              children: [
+                Align(
+                  alignment: AlignmentDirectional(-0.9, -0.9),
+                  child: InkWell(
+                    onTap: () async {
+                      Navigator.pop(context);
+                    },
+                    child: FaIcon(
+                      FontAwesomeIcons.arrowLeft,
+                      color: Colors.black,
+                      size: 32,
+                    ),
+                  ),
                 ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
+                Container(
+                  child: ListView(
+                    children: [
+                      Align(
+                        alignment: AlignmentDirectional(0, 0),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Align(
+                              alignment: AlignmentDirectional(-0.8, -0.68),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    50, 0, 50, 0),
+                                child: FFButtonWidget(
+                                  onPressed: () async {
+                                    await Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => Game1Widget(),
+                                      ),
+                                    );
+                                  },
+                                  text: 'Змейка',
+                                  options: FFButtonOptions(
+                                    width: double.infinity,
+                                    height: 75,
+                                    color: Color(0xFFB6133A),
+                                    textStyle:
+                                        FlutterFlowTheme.subtitle2.override(
+                                      fontFamily: 'Poppins',
+                                      color: Colors.white,
+                                      fontSize: 36,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                    borderSide: BorderSide(
+                                      color: Colors.white,
+                                      width: 5,
+                                    ),
+                                    borderRadius: 64,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(-0.8, -0.68),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    50, 20, 50, 0),
+                                child: FFButtonWidget(
+                                  onPressed: () async {
+                                    await Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => Game2Widget(),
+                                      ),
+                                    );
+                                  },
+                                  text: 'Цвета',
+                                  options: FFButtonOptions(
+                                    width: double.infinity,
+                                    height: 75,
+                                    color: Color(0xFFB6133A),
+                                    textStyle:
+                                        FlutterFlowTheme.subtitle2.override(
+                                      fontFamily: 'Poppins',
+                                      color: Colors.white,
+                                      fontSize: 36,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                    borderSide: BorderSide(
+                                      color: Colors.white,
+                                      width: 5,
+                                    ),
+                                    borderRadius: 64,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(-0.8, -0.68),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    50, 20, 50, 0),
+                                child: FFButtonWidget(
+                                  onPressed: () {
+                                    print('Button pressed ...');
+                                  },
+                                  text: 'Угадай картинку',
+                                  options: FFButtonOptions(
+                                    width: double.infinity,
+                                    height: 75,
+                                    color: Color(0xFFB6133A),
+                                    textStyle:
+                                        FlutterFlowTheme.subtitle2.override(
+                                      fontFamily: 'Poppins',
+                                      color: Colors.white,
+                                      fontSize: 36,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                    borderSide: BorderSide(
+                                      color: Colors.white,
+                                      width: 5,
+                                    ),
+                                    borderRadius: 64,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(-0.8, -0.68),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    50, 20, 50, 0),
+                                child: FFButtonWidget(
+                                  onPressed: () {
+                                    print('Button pressed ...');
+                                  },
+                                  text: 'Чей звук',
+                                  options: FFButtonOptions(
+                                    width: double.infinity,
+                                    height: 75,
+                                    color: Color(0xFFB6133A),
+                                    textStyle:
+                                        FlutterFlowTheme.subtitle2.override(
+                                      fontFamily: 'Poppins',
+                                      color: Colors.white,
+                                      fontSize: 36,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                    borderSide: BorderSide(
+                                      color: Colors.white,
+                                      width: 5,
+                                    ),
+                                    borderRadius: 64,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(-0.8, -0.68),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    50, 20, 50, 0),
+                                child: FFButtonWidget(
+                                  onPressed: () {
+                                    print('Button pressed ...');
+                                  },
+                                  text: 'Лабиринт',
+                                  options: FFButtonOptions(
+                                    width: double.infinity,
+                                    height: 75,
+                                    color: Color(0xFFB6133A),
+                                    textStyle:
+                                        FlutterFlowTheme.subtitle2.override(
+                                      fontFamily: 'Poppins',
+                                      color: Colors.white,
+                                      fontSize: 36,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                    borderSide: BorderSide(
+                                      color: Colors.white,
+                                      width: 5,
+                                    ),
+                                    borderRadius: 64,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(-0.8, -0.68),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    50, 20, 50, 0),
+                                child: FFButtonWidget(
+                                  onPressed: () {
+                                    print('Button pressed ...');
+                                  },
+                                  text: 'Чья тень',
+                                  options: FFButtonOptions(
+                                    width: double.infinity,
+                                    height: 75,
+                                    color: Color(0xFFB6133A),
+                                    textStyle:
+                                        FlutterFlowTheme.subtitle2.override(
+                                      fontFamily: 'Poppins',
+                                      color: Colors.white,
+                                      fontSize: 36,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                    borderSide: BorderSide(
+                                      color: Colors.white,
+                                      width: 5,
+                                    ),
+                                    borderRadius: 64,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(-0.8, -0.68),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    50, 20, 50, 0),
+                                child: FFButtonWidget(
+                                  onPressed: () {
+                                    print('Button pressed ...');
+                                  },
+                                  text: 'Чья еда',
+                                  options: FFButtonOptions(
+                                    width: double.infinity,
+                                    height: 75,
+                                    color: Color(0xFFB6133A),
+                                    textStyle:
+                                        FlutterFlowTheme.subtitle2.override(
+                                      fontFamily: 'Poppins',
+                                      color: Colors.white,
+                                      fontSize: 36,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                    borderSide: BorderSide(
+                                      color: Colors.white,
+                                      width: 5,
+                                    ),
+                                    borderRadius: 64,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(-0.8, -0.68),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    50, 20, 50, 0),
+                                child: FFButtonWidget(
+                                  onPressed: () {
+                                    print('Button pressed ...');
+                                  },
+                                  text: 'Соедени картинку',
+                                  options: FFButtonOptions(
+                                    width: double.infinity,
+                                    height: 75,
+                                    color: Color(0xFFB6133A),
+                                    textStyle:
+                                        FlutterFlowTheme.subtitle2.override(
+                                      fontFamily: 'Poppins',
+                                      color: Colors.white,
+                                      fontSize: 36,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                    borderSide: BorderSide(
+                                      color: Colors.white,
+                                      width: 5,
+                                    ),
+                                    borderRadius: 64,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(-0.8, -0.68),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    50, 20, 50, 0),
+                                child: FFButtonWidget(
+                                  onPressed: () {
+                                    print('Button pressed ...');
+                                  },
+                                  text: 'Что лишнее',
+                                  options: FFButtonOptions(
+                                    width: double.infinity,
+                                    height: 75,
+                                    color: Color(0xFFB6133A),
+                                    textStyle:
+                                        FlutterFlowTheme.subtitle2.override(
+                                      fontFamily: 'Poppins',
+                                      color: Colors.white,
+                                      fontSize: 36,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                    borderSide: BorderSide(
+                                      color: Colors.white,
+                                      width: 5,
+                                    ),
+                                    borderRadius: 64,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(-0.8, -0.68),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    50, 20, 50, 0),
+                                child: FFButtonWidget(
+                                  onPressed: () {
+                                    print('Button pressed ...');
+                                  },
+                                  text: 'Найди пару',
+                                  options: FFButtonOptions(
+                                    width: double.infinity,
+                                    height: 75,
+                                    color: Color(0xFFB6133A),
+                                    textStyle:
+                                        FlutterFlowTheme.subtitle2.override(
+                                      fontFamily: 'Poppins',
+                                      color: Colors.white,
+                                      fontSize: 36,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                    borderSide: BorderSide(
+                                      color: Colors.white,
+                                      width: 5,
+                                    ),
+                                    borderRadius: 64,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(-0.8, -0.68),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    50, 20, 50, 0),
+                                child: FFButtonWidget(
+                                  onPressed: () {
+                                    print('Button pressed ...');
+                                  },
+                                  text: 'Арифметика',
+                                  options: FFButtonOptions(
+                                    width: double.infinity,
+                                    height: 75,
+                                    color: Color(0xFFB6133A),
+                                    textStyle:
+                                        FlutterFlowTheme.subtitle2.override(
+                                      fontFamily: 'Poppins',
+                                      color: Colors.white,
+                                      fontSize: 36,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                    borderSide: BorderSide(
+                                      color: Colors.white,
+                                      width: 5,
+                                    ),
+                                    borderRadius: 64,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            )));
   }
 }

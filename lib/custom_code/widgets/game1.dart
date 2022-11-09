@@ -1,9 +1,7 @@
-// Automatic FlutterFlow imports
 import '../../backend/backend.dart';
 import '../../flutter_flow/flutter_flow_theme.dart';
 import '../../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-// Begin custom widget code
 import 'package:google_fonts/google_fonts.dart';
 import 'dart:math';
 import 'dart:ui';
@@ -11,6 +9,7 @@ import 'dart:async';
 import 'package:flutter/widgets.dart';
 
 enum Direction { LEFT, RIGHT, UP, DOWN }
+
 enum GameState { START, RUNNING, FAILURE }
 
 class Game1 extends StatefulWidget {
@@ -84,7 +83,7 @@ class _Game1State extends State<Game1> {
                 children: <Widget>[
                   Padding(
                     padding: EdgeInsets.only(right: 50),
-                    child: RaisedButton(
+                    child: MaterialButton(
                       onPressed: () {
                         setState(() {
                           _direction = Direction.UP;
@@ -97,7 +96,7 @@ class _Game1State extends State<Game1> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: <Widget>[
-                      RaisedButton(
+                      MaterialButton(
                         onPressed: () {
                           setState(() {
                             _direction = Direction.LEFT;
@@ -108,7 +107,7 @@ class _Game1State extends State<Game1> {
                       ),
                       Padding(
                         padding: EdgeInsets.only(left: 10),
-                        child: RaisedButton(
+                        child: MaterialButton(
                           onPressed: () {
                             setState(() {
                               _direction = Direction.RIGHT;
@@ -122,7 +121,7 @@ class _Game1State extends State<Game1> {
                   ),
                   Padding(
                     padding: EdgeInsets.only(right: 50),
-                    child: RaisedButton(
+                    child: MaterialButton(
                       onPressed: () {
                         setState(() {
                           _direction = Direction.DOWN;
